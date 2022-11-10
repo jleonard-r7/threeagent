@@ -3,4 +3,4 @@
         medley/medley {:mvn/version "1.0.0"}
         reagent/reagent {:mvn/version "0.8.1"}
         karma-reporter/karma-reporter {:mvn/version "3.1.0"}}
- :paths ["src" "resources"] }
+ :paths ["src/main" "resources"] }
