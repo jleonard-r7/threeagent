@@ -248,13 +248,17 @@
 
 (defn- ^Context create-context [root-fn dom-root {:keys [on-before-render
                                                          on-after-render
+                                                         context
                                                          shadow-map
                                                          systems
                                                          entity-types]}]
   (let [canvas (get-canvas dom-root)
         width (.-offsetWidth canvas)
         height (.-offsetHeight canvas)
-        renderer (new three/WebGLRenderer (clj->js {:canvas canvas}))
+        renderer (new three/WebGLRenderer (clj->js
+                                           (if context
+                                             {:context context}
+                                             {:canvas canvas})))
         camera (three/PerspectiveCamera. 75 (/ width height) 0.1 1000)
         cameras (array)
         scene-root (new three/Scene)
