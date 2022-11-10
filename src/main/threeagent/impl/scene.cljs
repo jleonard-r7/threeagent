@@ -283,7 +283,7 @@
                                  camera)]
       (init-scene! context virtual-scene scene-root)
       (.push contexts context)
-      (.setAnimationLoop renderer #(animate context))
+      ;;(.setAnimationLoop renderer #(animate context))
       context)))
 
 (defn- clear-scene! [^Context context ^vscene/Node vscene-root]
