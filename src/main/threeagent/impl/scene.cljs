@@ -284,6 +284,7 @@
       (init-scene! context virtual-scene scene-root)
       (.push contexts context)
       ;;(.setAnimationLoop renderer #(animate context))
+      (js/setInterval #(animate context) 16) ;; 60 fps
       context)))
 
 (defn- clear-scene! [^Context context ^vscene/Node vscene-root]
