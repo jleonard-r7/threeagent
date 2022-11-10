@@ -22,3 +22,5 @@
   ([root-fn dom-root] (render root-fn dom-root {}))
   ([root-fn dom-root opts] (scene/render root-fn dom-root opts)))
 
+
+(def animation-frame scene/animation-frame))

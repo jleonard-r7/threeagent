@@ -245,6 +245,7 @@
       (set! (.-type sm) (or (:type shadow-map)
                             three/PCFShadowMap)))))
 
+(def animation-frame (atom nil))
 
 (defn- ^Context create-context [root-fn dom-root {:keys [on-before-render
                                                          on-after-render
@@ -283,8 +284,8 @@
                                  camera)]
       (init-scene! context virtual-scene scene-root)
       (.push contexts context)
-      ;;(.setAnimationLoop renderer #(animate context))
-      (js/setInterval #(animate context) 16) ;; 60 fps
+
+      (reset! animation-frame #(animate context))
       context)))
 
 (defn- clear-scene! [^Context context ^vscene/Node vscene-root]
