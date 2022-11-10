@@ -23,4 +23,4 @@
   ([root-fn dom-root opts] (scene/render root-fn dom-root opts)))
 
 
-(def animation-frame scene/animation-frame))
+(def animation-frame scene/animation-frame)
